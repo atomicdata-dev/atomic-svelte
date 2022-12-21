@@ -2,7 +2,7 @@ import { Store } from '@tomic/lib';
 import { get } from 'svelte/store';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-import { getResource, getValue, initStore, store } from '~/main';
+import { getResource, getValue, initStore, store } from '~/index';
 
 const resourceSubject = 'https://resource1';
 const property = 'https://property';

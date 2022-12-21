@@ -1,6 +1,6 @@
 import { Store, urls } from '@tomic/lib';
 import { describe, it, expect, beforeEach } from 'vitest';
-import { getResource, initStore, store } from '~/main';
+import { getResource, initStore, store } from '~/index';
 import { get } from 'svelte/store';
 
 const resource1Subject = 'https://resource1';
