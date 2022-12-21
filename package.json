@@ -6,7 +6,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.0",
+  "version": "0.34.9",
   "type": "module",
   "exports": {
     ".": {
@@ -45,8 +45,11 @@
   },
   "packageManager": "pnpm@7.13.3",
   "dependencies": {
-    "@tomic/lib": "^0.34.0",
+    "@tomic/lib": "^0.34.9",
     "eslint": "^8.30.0",
     "svelte": "^3.55.0"
+  },
+  "peerDependencies": {
+    "@tomic/lib": "0.34.x"
   }
 }

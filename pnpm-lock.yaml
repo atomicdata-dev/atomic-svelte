@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rollup/plugin-typescript': ^10.0.1
-  '@tomic/lib': ^0.34.0
+  '@tomic/lib': ^0.34.9
   '@types/node': ^18.11.17
   '@typescript-eslint/eslint-plugin': ^5.47.0
   '@typescript-eslint/parser': ^5.47.0
@@ -18,7 +18,7 @@ specifiers:
   vitest: ^0.26.1
 
 dependencies:
-  '@tomic/lib': 0.34.5
+  '@tomic/lib': 0.34.9
   eslint: 8.30.0
   svelte: 3.55.0
 
@@ -328,8 +328,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@tomic/lib/0.34.5:
-    resolution: {integrity: sha512-j25+Yo0g27g/RZZ8LIM2pWTZHB2Op1EldWRCD5fKTsR01VUACrWBHKtJmT4URgHUkWEcVBVgX4tjEnHVqWID7g==}
+  /@tomic/lib/0.34.9:
+    resolution: {integrity: sha512-6cTQQ4aOcqoODZE04L0ZLkoO3uFoGvszJQdtVOeHOTz2goJI3JvQhWUiHkZgG/+nNxGB3ietonLTD6JPpAbaDg==}
     dependencies:
       '@noble/ed25519': 1.6.0
       '@noble/hashes': 0.5.9
