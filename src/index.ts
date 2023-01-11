@@ -8,3 +8,4 @@ export const initStore = (store: Store) => {
 export { store } from './stores/store';
 export { getResource } from './stores/getResource';
 export { getValue } from './stores/getValue';
+export * from './loadResourceTree';
