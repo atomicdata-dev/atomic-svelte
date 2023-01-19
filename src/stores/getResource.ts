@@ -10,17 +10,20 @@ export const getResource = (
   const adStore = get(store);
 
   // eslint-disable-next-line prefer-const
-  let resource = readable<Resource>(undefined, set => {
-    set(adStore.getResourceLoading(subject, opts));
+  let resource = readable<Resource>(
+    adStore.getResourceLoading(subject, opts),
+    set => {
+      set(adStore.getResourceLoading(subject, opts));
 
-    const subscriber = (changedResource: Resource) => {
-      set(changedResource);
-    };
+      const subscriber = (changedResource: Resource) => {
+        set(changedResource);
+      };
 
-    adStore.subscribe(subject, subscriber);
+      adStore.subscribe(subject, subscriber);
 
-    return () => adStore.unsubscribe(subject, subscriber);
-  });
+      return () => adStore.unsubscribe(subject, subscriber);
+    },
+  );
 
   return resource;
 };

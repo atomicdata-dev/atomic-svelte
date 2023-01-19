@@ -23,6 +23,8 @@ const normalize = (value: JSONValue): string[] => {
  * This is only useful for SSR and SSG as the getResource functions don't wait for the resource to be fully available
  * causing SvelteKit to render incomplete pages.
  *
+ * When using **SvelteKit**, make sure you inject the custom fetch function into the store before calling this function.
+ *
  * **Example**:
  * ```ts
  * await loadResourceTree('https://myblog.com', {
