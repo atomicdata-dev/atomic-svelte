@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rollup/plugin-typescript': ^10.0.1
-  '@tomic/lib': ^0.35.0-beta.0
+  '@tomic/lib': ^0.35.0-beta.1
   '@types/node': ^18.11.17
   '@typescript-eslint/eslint-plugin': ^5.47.0
   '@typescript-eslint/parser': ^5.47.0
@@ -18,7 +18,7 @@ specifiers:
   vitest: ^0.26.1
 
 dependencies:
-  '@tomic/lib': 0.35.0-beta.0
+  '@tomic/lib': 0.35.0-beta.1
   eslint: 8.30.0
   svelte: 3.55.0
 
@@ -275,6 +275,7 @@ packages:
 
   /@noble/hashes/0.5.9:
     resolution: {integrity: sha512-7lN1Qh6d8DUGmfN36XRsbN/WcGIPNtTGhkw26vWId/DlCIGsYJJootTtPGghTLcn/AaXPx2Q0b3cacrwXa7OVw==}
+    deprecated: Upgrade to v1.0.0 or higher for audited package
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -328,8 +329,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@tomic/lib/0.35.0-beta.0:
-    resolution: {integrity: sha512-HyOLUsDbGaoIAaWHqJNGvrru11u4bBVD4iaRqYDjRZkhNDrsLCafw+7bbal1hanMxRVN1FFfSU96B5Wnkv6fkA==}
+  /@tomic/lib/0.35.0-beta.1:
+    resolution: {integrity: sha512-JiPICyR1WkiPu+v7Ip5gv7pNA3HtZYVvpd7mzJi85MNTgEGpEWjSSlUDLZXU9vdkADkSYC+t4iKVeLUF1FSQWw==}
     dependencies:
       '@noble/ed25519': 1.6.0
       '@noble/hashes': 0.5.9
