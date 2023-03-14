@@ -1,9 +1,10 @@
 import { Store, urls } from '@tomic/lib';
 import { describe, it, expect, beforeEach } from 'vitest';
 import { getResource, initStore, store } from '~/index';
-import { get } from 'svelte/store';
+import { get, writable } from 'svelte/store';
 
 const resource1Subject = 'https://resource1';
+const resource2Subject = 'https://resource2';
 
 describe('getResource', () => {
   beforeEach(() => {
@@ -43,5 +44,17 @@ describe('getResource', () => {
     const resourceSecond = get(resourceStore2);
 
     expect(resourceSecond.get(urls.properties.name)).toBe('Resource 1');
+  });
+
+  it('should update when subject is writable and changes', async () => {
+    const writableSubject = writable(resource1Subject);
+
+    const resource = getResource(writableSubject, { newResource: true });
+
+    expect(get(resource).getSubject()).toBe(resource1Subject);
+
+    writableSubject.set(resource2Subject);
+
+    expect(get(resource).getSubject()).toBe(resource2Subject);
   });
 });
