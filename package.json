@@ -8,6 +8,7 @@
   },
   "version": "0.35.1",
   "type": "module",
+  "license": "MIT",
   "exports": {
     ".": {
       "import": "./dist/index.js",

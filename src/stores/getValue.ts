@@ -18,8 +18,6 @@ export const getValue = <T extends JSONValue = JSONValue>(
   const adStore = get(store);
   let resource: Resource = get(resourceStore);
 
-  resourceStore.subscribe(r => (resource = r));
-
   let value: T | undefined = resource.get(property) as T;
   const subscriptions = new Set<ValueSubscriber<T>>();
   let subscribedToStore = false;
@@ -84,6 +82,12 @@ export const getValue = <T extends JSONValue = JSONValue>(
       });
     },
   };
+
+  resourceStore.subscribe(r => {
+    value = r.get(property) as T;
+    resource = r;
+    notifySvelteChange();
+  });
 
   return writable;
 };
