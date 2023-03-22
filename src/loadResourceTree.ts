@@ -18,6 +18,12 @@ const normalize = (value: JSONValue): string[] => {
   return [];
 };
 
+const isFulfilled = <T>(
+  result: PromiseSettledResult<T>,
+): result is PromiseFulfilledResult<T> => {
+  return result.status === 'fulfilled';
+};
+
 /**
  * Make sure the given tree of resources are available in the store.
  * This is only useful for SSR and SSG as the getResource functions don't wait for the resource to be fully available
@@ -51,9 +57,15 @@ export const loadResourceTree = async (
     for (const [property, branch] of Object.entries(tree)) {
       await store.getResourceAsync(property);
       const values = normalize(resource.get(property));
-      const resources = await Promise.all(
-        values.map(value => store.getResourceAsync(value)),
-      );
+      const resources = (
+        await Promise.allSettled(
+          values.map(value => {
+            return store.getResourceAsync(value);
+          }),
+        )
+      )
+        .filter(isFulfilled)
+        .map(x => x.value);
 
       if (typeof branch === 'boolean') {
         continue;
